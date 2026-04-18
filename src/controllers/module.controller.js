@@ -8,10 +8,10 @@ import { ApiError } from '../utils/ApiError.js';
  */
 export const getArchitecture = asyncHandler(async (req, res) => {
   const modules = await prisma.module.findMany({
-    include: { 
+    include: {
       pages: {
         orderBy: { sortOrder: 'asc' }
-      } 
+      }
     },
     orderBy: { sortOrder: 'asc' }
   });
@@ -36,7 +36,7 @@ export const reorderModules = asyncHandler(async (req, res) => {
   }
 
   await prisma.$transaction(
-    orders.map(o => 
+    orders.map(o =>
       prisma.module.update({
         where: { id: o.id },
         data: { sortOrder: o.sortOrder }
@@ -65,7 +65,7 @@ export const reorderPages = asyncHandler(async (req, res) => {
   }
 
   await prisma.$transaction(
-    orders.map(o => 
+    orders.map(o =>
       prisma.page.update({
         where: { id: o.id },
         data: { sortOrder: o.sortOrder }
@@ -76,9 +76,7 @@ export const reorderPages = asyncHandler(async (req, res) => {
   return res.status(200).json(ApiResponse(200, null, "Page sequence updated"));
 });
 
-/**
- * RECURSIVE DELETE MODULE (Deep Purge)
- */
+
 export const deleteModule = asyncHandler(async (req, res) => {
   const moduleId = req.params.id;
 
@@ -89,7 +87,7 @@ export const deleteModule = asyncHandler(async (req, res) => {
     where: { moduleId },
     select: { id: true }
   });
-  
+
   const pageIds = pages.map(p => p.id);
 
   await prisma.$transaction(async (tx) => {
@@ -122,9 +120,6 @@ export const deletePage = asyncHandler(async (req, res) => {
   return res.status(200).json(ApiResponse(200, null, "Page and associated authorities removed"));
 });
 
-/**
- * CREATE PARENT MODULE
- */
 export const createModule = asyncHandler(async (req, res) => {
   const { name, icon } = req.body;
   if (!name) throw new ApiError(400, "Module name is mandatory");
@@ -133,9 +128,6 @@ export const createModule = asyncHandler(async (req, res) => {
   return res.status(201).json(ApiResponse(201, newModule, "Parent Module created"));
 });
 
-/**
- * CREATE PAGE
- */
 export const createPage = asyncHandler(async (req, res) => {
   const { name, path, moduleId } = req.body;
   if (!name || !path || !moduleId) throw new ApiError(400, "Missing required architecture fields");

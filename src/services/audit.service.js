@@ -1,9 +1,6 @@
 import prisma from '../config/prisma.js';
 import { getPaginatedData } from '../utils/paginator.js';
 
-/**
- * Log a system activity
- */
 export const createLog = async ({
   userId,
   action,
@@ -29,19 +26,16 @@ export const createLog = async ({
   }
 };
 
-/**
- * Get all logs (Paginated) - UPGRADED WITH GLOBAL SEARCH
- */
+
 export const getAllLogs = async (query) => {
   const { action, entity, userId, search } = query;
-  
+
   const where = { AND: [] };
 
   if (action) where.AND.push({ action });
   if (entity) where.AND.push({ entity });
   if (userId) where.AND.push({ userId });
 
-  // Add Global Search across multiple fields
   if (search) {
     where.AND.push({
       OR: [

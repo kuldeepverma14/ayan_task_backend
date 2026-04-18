@@ -69,12 +69,10 @@ export const refreshAccessToken = async (oldRefreshToken) => {
       include: { role: true }
     });
 
-    // REFRESH TOKEN ROTATION & VALIDITY CHECK
     if (!user || user.refreshToken !== oldRefreshToken) {
       if (user) {
         await prisma.user.update({ where: { id: user.id }, data: { refreshToken: null } });
       }
-      // Return 403 to signal "Full Logout Required"
       throw new ApiError(403, 'Refresh token expired or reused');
     }
 
@@ -87,7 +85,6 @@ export const refreshAccessToken = async (oldRefreshToken) => {
 
     return { accessToken, refreshToken: newRefreshToken };
   } catch (error) {
-    // Catch JWT expiration (expired refresh token)
     throw new ApiError(403, error.message || 'Refresh token invalid');
   }
 };
@@ -104,7 +101,6 @@ export const revokeToken = async (token) => {
     const decoded = jwt.decode(token);
     if (!decoded || !decoded.exp) return;
 
-    // expiresAt is decodex.exp (in seconds)
     const expiresAt = new Date(decoded.exp * 1000);
 
     await prisma.revokedToken.upsert({

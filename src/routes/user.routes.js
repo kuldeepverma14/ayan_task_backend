@@ -9,7 +9,7 @@ router.use(verifyJWT);
 router.get('/', getUsers);
 router.get('/roles', getAllRoles);
 router.post('/', isSuperAdmin, addUser);
-router.patch('/:id', isSuperAdmin, editUser); // Add edit route
+router.patch('/:id', isSuperAdmin, editUser);
 router.delete('/:id', isSuperAdmin, removeUser);
 router.patch('/:id/status', isSuperAdmin, toggleStatus);
 

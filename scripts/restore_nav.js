@@ -3,7 +3,6 @@ import prisma from '../src/config/prisma.js';
 async function main() {
   console.log('--- NAVIGATION RESTORATION START ---');
 
-  // 1. Find the "Security & Logs" module
   const securityModule = await prisma.module.findFirst({
     where: { name: 'Security & Logs' }
   });
@@ -11,7 +10,6 @@ async function main() {
   if (securityModule) {
     console.log(`- TARGET FOUND: ${securityModule.name}`);
 
-    // 2. Add the "Modules Registry" page if it doesn't exist
     const modulesPage = await prisma.page.upsert({
       where: { path: '/modules' },
       update: {

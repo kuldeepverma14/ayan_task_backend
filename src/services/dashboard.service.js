@@ -13,17 +13,14 @@ export const getDashboardStats = async (user) => {
     totalUsers,
     activeUsers,
     totalLogs,
-    growth: "+12.5%" // Mock growth for UI aesthetics
+    growth: "+12.5%"
   };
 };
 
-/**
- * Get Live Activity History with RBAC Filtering
- */
+
 export const getActivityHistory = async (user, query) => {
   const where = {};
 
-  // REQUIREMENT: If NOT Super Admin, only show their OWN activity
   if (user.role.name !== 'SUPER_ADMIN') {
     where.userId = user.id;
   }

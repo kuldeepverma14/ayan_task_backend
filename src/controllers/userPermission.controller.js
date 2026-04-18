@@ -3,12 +3,9 @@ import { ApiResponse } from '../utils/ApiResponse.js';
 import { asyncHandler } from '../utils/asyncHandler.js';
 import { ApiError } from '../utils/ApiError.js';
 
-/**
- * Get individual permissions for a specific user
- */
 export const getUserPermissions = asyncHandler(async (req, res) => {
   const { id } = req.params;
-  
+
   const user = await prisma.user.findUnique({ where: { id } });
   if (!user) throw new ApiError(404, "Identity not found in registry");
 
@@ -28,7 +25,7 @@ export const getUserPermissions = asyncHandler(async (req, res) => {
  */
 export const syncUserPermissions = asyncHandler(async (req, res) => {
   const { id } = req.params;
-  const { permissions } = req.body; 
+  const { permissions } = req.body;
 
   const user = await prisma.user.findUnique({ where: { id } });
   if (!user) throw new ApiError(404, "Cannot synchronize matrix for non-existent identity");

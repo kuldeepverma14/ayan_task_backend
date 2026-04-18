@@ -6,7 +6,6 @@ const router = Router();
 
 router.use(verifyJWT);
 
-// Only allow viewing logs if user has permission
 router.get('/', checkPermission('/audit-logs', 'canView'), getLogs);
 
 export default router;

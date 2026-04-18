@@ -16,15 +16,25 @@ import userPermissionRoutes from "./routes/user_permission.routes.js";
 
 const app = express();
 
-// Security Headers (Industry Standard)
 app.use(helmet());
 
-// Apply global rate limiting (Leaky Bucket: 3 req/sec)
 app.use(rateLimitMiddleware);
 
-// Standard middlewares
+const allowedOrigins = [
+  "http://localhost:5173",
+  "https://ayan-task-frontend.vercel.app"
+];
+
 app.use(cors({
-  origin: process.env.CORS_ORIGIN || 'http://localhost:5173',
+  origin: function (origin, callback) {
+    if (!origin) return callback(null, true);
+
+    if (allowedOrigins.includes(origin)) {
+      return callback(null, true);
+    } else {
+      return callback(new Error("Not allowed by CORS"));
+    }
+  },
   credentials: true
 }));
 
@@ -32,11 +42,9 @@ app.use(express.json({ limit: '16kb' }));
 app.use(express.urlencoded({ extended: true, limit: '16kb' }));
 app.use(cookieParser());
 
-// Morgan logging for development
 if (process.env.NODE_ENV === 'development') {
   app.use(morgan('dev'));
 } else {
-  // Simple logging for production errors
   app.use(morgan('combined', {
     skip: (req, res) => res.statusCode < 400
   }));

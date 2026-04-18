@@ -4,7 +4,7 @@ import { ApiResponse } from '../utils/ApiResponse.js';
 
 const cookieOptions = {
   httpOnly: true,
-  secure: true, // Must be true for sameSite: 'none'
+  secure: true,
   sameSite: 'none'
 };
 
@@ -34,7 +34,7 @@ export const getMe = asyncHandler(async (req, res) => {
 
 export const refresh = asyncHandler(async (req, res) => {
   const oldRefreshToken = req.cookies?.refreshToken || req.body.refreshToken;
-  
+
   const { accessToken, refreshToken } = await authService.refreshAccessToken(oldRefreshToken);
 
   return res
@@ -46,7 +46,7 @@ export const refresh = asyncHandler(async (req, res) => {
 
 export const logout = asyncHandler(async (req, res) => {
   const token = req.cookies?.accessToken || req.header("Authorization")?.replace("Bearer ", "");
-  
+
   if (token) {
     await authService.revokeToken(token);
   }
@@ -54,7 +54,7 @@ export const logout = asyncHandler(async (req, res) => {
   if (req.user?.id) {
     await authService.clearRefreshToken(req.user.id);
   }
-  
+
   return res
     .status(200)
     .clearCookie('accessToken', cookieOptions)

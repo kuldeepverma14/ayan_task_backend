@@ -4,9 +4,7 @@ import { asyncHandler } from '../utils/asyncHandler.js';
 import { ApiError } from '../utils/ApiError.js';
 import { createLog } from '../services/audit.service.js';
 
-/**
- * Get all roles and their counts
- */
+
 export const getRoles = asyncHandler(async (req, res) => {
   const roles = await prisma.role.findMany({
     include: {
@@ -18,9 +16,7 @@ export const getRoles = asyncHandler(async (req, res) => {
   return res.status(200).json(ApiResponse(200, roles, "Roles fetched successfully"));
 });
 
-/**
- * Get specific role with full permission matrix
- */
+
 export const getRoleById = asyncHandler(async (req, res) => {
   const { id } = req.params;
   const role = await prisma.role.findUnique({
@@ -31,30 +27,26 @@ export const getRoleById = asyncHandler(async (req, res) => {
       }
     }
   });
-  
+
   if (!role) throw new ApiError(404, "Security Role not found in matrix");
 
   const allPages = await prisma.page.findMany();
-  
+
   return res.status(200).json(ApiResponse(200, { role, allPages }, "Role details fetched"));
 });
 
-/**
- * Update permission matrix for a subordinate role
- */
+
 export const updateRolePermissions = asyncHandler(async (req, res) => {
-  const { permissions } = req.body; 
+  const { permissions } = req.body;
   const roleId = req.params.id;
 
   if (!permissions || !Array.isArray(permissions)) {
     throw new ApiError(400, "Invalid permission matrix format");
   }
 
-  // 1. Verify Role Existence
   const roleExists = await prisma.role.findUnique({ where: { id: roleId } });
   if (!roleExists) throw new ApiError(404, "Cannot update permissions for non-existent role");
 
-  // 2. Integrity Guard: Verify ALL Page IDs exist to prevent FK violations
   const pageIds = permissions.map(p => p.pageId);
   const existingPagesCount = await prisma.page.count({
     where: { id: { in: pageIds } }
@@ -87,14 +79,14 @@ export const updateRolePermissions = asyncHandler(async (req, res) => {
   });
 
   await Promise.all(updatePromises);
-  
-  await createLog({ 
-    userId: req.user.id, 
-    action: 'UPDATE_PERMISSIONS', 
-    entity: 'Role', 
-    entityId: roleId, 
-    details: { roleName: roleExists.name }, 
-    req 
+
+  await createLog({
+    userId: req.user.id,
+    action: 'UPDATE_PERMISSIONS',
+    entity: 'Role',
+    entityId: roleId,
+    details: { roleName: roleExists.name },
+    req
   });
 
   return res.status(200).json(ApiResponse(200, {}, "Permissions updated successfully"));
