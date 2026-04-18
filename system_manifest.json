@@ -1,0 +1,315 @@
+{
+  "roles": [
+    {
+      "id": "9dfda145-4be8-4a74-a8ce-dfe9d63f1625",
+      "name": "SUPER_ADMIN",
+      "description": "System owner with total control",
+      "createdAt": "2026-04-17T15:43:34.028Z",
+      "updatedAt": "2026-04-17T15:43:34.028Z",
+      "permissions": [
+        {
+          "id": "d32c3cc0-572c-477b-b7db-96abbd485961",
+          "roleId": "9dfda145-4be8-4a74-a8ce-dfe9d63f1625",
+          "pageId": "9f3cfde7-f712-4cb5-973c-42519832ed52",
+          "canView": true,
+          "canCreate": true,
+          "canEdit": true,
+          "canDelete": true,
+          "createdAt": "2026-04-17T15:43:34.070Z",
+          "updatedAt": "2026-04-17T15:43:34.070Z"
+        },
+        {
+          "id": "6c4d2062-68c7-4f52-a12c-fa46a416581a",
+          "roleId": "9dfda145-4be8-4a74-a8ce-dfe9d63f1625",
+          "pageId": "78ae9eb2-a0af-4d61-b7d6-8381ced8a6ab",
+          "canView": true,
+          "canCreate": true,
+          "canEdit": true,
+          "canDelete": true,
+          "createdAt": "2026-04-17T15:43:34.080Z",
+          "updatedAt": "2026-04-17T15:43:34.080Z"
+        },
+        {
+          "id": "15d05be5-213a-41a9-8fb9-51a6dbd6f804",
+          "roleId": "9dfda145-4be8-4a74-a8ce-dfe9d63f1625",
+          "pageId": "945087d9-92f8-4b7f-b652-7a97ffa16595",
+          "canView": true,
+          "canCreate": true,
+          "canEdit": true,
+          "canDelete": true,
+          "createdAt": "2026-04-17T15:43:34.085Z",
+          "updatedAt": "2026-04-17T15:43:34.085Z"
+        },
+        {
+          "id": "a073519f-7a63-49f6-8c76-948add916a9b",
+          "roleId": "9dfda145-4be8-4a74-a8ce-dfe9d63f1625",
+          "pageId": "c3eebd62-e64d-4318-9eb8-8ae7b1e82cd6",
+          "canView": true,
+          "canCreate": true,
+          "canEdit": true,
+          "canDelete": true,
+          "createdAt": "2026-04-17T15:43:34.091Z",
+          "updatedAt": "2026-04-17T15:43:34.091Z"
+        },
+        {
+          "id": "f5df8418-6d31-426f-8b39-5afb9207ae2a",
+          "roleId": "9dfda145-4be8-4a74-a8ce-dfe9d63f1625",
+          "pageId": "10f9baa4-7e08-44d5-9b64-dd6993094e2f",
+          "canView": true,
+          "canCreate": true,
+          "canEdit": true,
+          "canDelete": true,
+          "createdAt": "2026-04-17T15:43:34.095Z",
+          "updatedAt": "2026-04-17T15:43:34.095Z"
+        }
+      ]
+    },
+    {
+      "id": "93dec12a-42c9-45da-b678-b00b082d98ab",
+      "name": "ADMIN",
+      "description": "Staff with management access",
+      "createdAt": "2026-04-17T15:43:34.044Z",
+      "updatedAt": "2026-04-17T15:43:34.044Z",
+      "permissions": [
+        {
+          "id": "4649dcfa-2a87-4ebc-9c2c-e91f642a4fe7",
+          "roleId": "93dec12a-42c9-45da-b678-b00b082d98ab",
+          "pageId": "945087d9-92f8-4b7f-b652-7a97ffa16595",
+          "canView": false,
+          "canCreate": false,
+          "canEdit": false,
+          "canDelete": false,
+          "createdAt": "2026-04-17T19:55:01.852Z",
+          "updatedAt": "2026-04-17T22:15:54.917Z"
+        },
+        {
+          "id": "442f92b6-389f-4219-b100-716c44ad0c75",
+          "roleId": "93dec12a-42c9-45da-b678-b00b082d98ab",
+          "pageId": "c3eebd62-e64d-4318-9eb8-8ae7b1e82cd6",
+          "canView": true,
+          "canCreate": false,
+          "canEdit": false,
+          "canDelete": false,
+          "createdAt": "2026-04-17T19:55:01.852Z",
+          "updatedAt": "2026-04-17T22:15:54.917Z"
+        },
+        {
+          "id": "b603ba3c-93b4-4bf6-9f15-97000bf57901",
+          "roleId": "93dec12a-42c9-45da-b678-b00b082d98ab",
+          "pageId": "10f9baa4-7e08-44d5-9b64-dd6993094e2f",
+          "canView": false,
+          "canCreate": false,
+          "canEdit": false,
+          "canDelete": false,
+          "createdAt": "2026-04-17T19:55:01.852Z",
+          "updatedAt": "2026-04-17T22:15:54.917Z"
+        },
+        {
+          "id": "68f527ca-e69c-4601-8124-a5b3d247e241",
+          "roleId": "93dec12a-42c9-45da-b678-b00b082d98ab",
+          "pageId": "9f3cfde7-f712-4cb5-973c-42519832ed52",
+          "canView": false,
+          "canCreate": false,
+          "canEdit": false,
+          "canDelete": false,
+          "createdAt": "2026-04-17T19:55:01.852Z",
+          "updatedAt": "2026-04-17T22:15:54.917Z"
+        },
+        {
+          "id": "85e5578f-a2ec-4039-808f-9f23d68738df",
+          "roleId": "93dec12a-42c9-45da-b678-b00b082d98ab",
+          "pageId": "78ae9eb2-a0af-4d61-b7d6-8381ced8a6ab",
+          "canView": true,
+          "canCreate": false,
+          "canEdit": false,
+          "canDelete": false,
+          "createdAt": "2026-04-17T19:55:01.852Z",
+          "updatedAt": "2026-04-17T22:15:54.917Z"
+        },
+        {
+          "id": "eeaa8191-f90c-4b36-8c93-a63c7fae11ae",
+          "roleId": "93dec12a-42c9-45da-b678-b00b082d98ab",
+          "pageId": "55b0b5f4-8ac3-4505-ad6e-ee59592c5539",
+          "canView": true,
+          "canCreate": false,
+          "canEdit": false,
+          "canDelete": false,
+          "createdAt": "2026-04-17T22:15:54.917Z",
+          "updatedAt": "2026-04-17T22:15:54.917Z"
+        }
+      ]
+    }
+  ],
+  "modules": [
+    {
+      "id": "78cfe1ed-1a6f-4a14-a1c2-92f6d80253b0",
+      "name": "Dashboard",
+      "icon": "Layout",
+      "sortOrder": 0,
+      "createdAt": "2026-04-17T19:26:06.482Z",
+      "updatedAt": "2026-04-17T21:38:19.392Z",
+      "pages": [
+        {
+          "id": "9f3cfde7-f712-4cb5-973c-42519832ed52",
+          "name": "Dashboard",
+          "path": "/",
+          "moduleId": "78cfe1ed-1a6f-4a14-a1c2-92f6d80253b0",
+          "sortOrder": 0,
+          "createdAt": "2026-04-17T15:43:34.064Z",
+          "updatedAt": "2026-04-17T21:38:19.501Z"
+        }
+      ]
+    },
+    {
+      "id": "fb7aa608-7b9e-4077-a2cb-6fa7c894ddcc",
+      "name": "User Management",
+      "icon": "Users",
+      "sortOrder": 1,
+      "createdAt": "2026-04-17T15:43:34.076Z",
+      "updatedAt": "2026-04-17T21:38:19.392Z",
+      "pages": [
+        {
+          "id": "78ae9eb2-a0af-4d61-b7d6-8381ced8a6ab",
+          "name": "Users List",
+          "path": "/users",
+          "moduleId": "fb7aa608-7b9e-4077-a2cb-6fa7c894ddcc",
+          "sortOrder": 0,
+          "createdAt": "2026-04-17T15:43:34.078Z",
+          "updatedAt": "2026-04-17T21:38:19.501Z"
+        },
+        {
+          "id": "945087d9-92f8-4b7f-b652-7a97ffa16595",
+          "name": "Roles & Permissions",
+          "path": "/roles",
+          "moduleId": "fb7aa608-7b9e-4077-a2cb-6fa7c894ddcc",
+          "sortOrder": 1,
+          "createdAt": "2026-04-17T15:43:34.083Z",
+          "updatedAt": "2026-04-17T21:38:19.501Z"
+        }
+      ]
+    },
+    {
+      "id": "cbe34cea-9716-41c5-a58e-baac2bca2a28",
+      "name": "Security & Logs",
+      "icon": "History",
+      "sortOrder": 2,
+      "createdAt": "2026-04-17T15:43:34.087Z",
+      "updatedAt": "2026-04-17T21:38:19.392Z",
+      "pages": [
+        {
+          "id": "c3eebd62-e64d-4318-9eb8-8ae7b1e82cd6",
+          "name": "Audit Logs",
+          "path": "/audit-logs",
+          "moduleId": "cbe34cea-9716-41c5-a58e-baac2bca2a28",
+          "sortOrder": 0,
+          "createdAt": "2026-04-17T15:43:34.089Z",
+          "updatedAt": "2026-04-17T21:38:19.501Z"
+        },
+        {
+          "id": "10f9baa4-7e08-44d5-9b64-dd6993094e2f",
+          "name": "System Settings",
+          "path": "/settings",
+          "moduleId": "cbe34cea-9716-41c5-a58e-baac2bca2a28",
+          "sortOrder": 1,
+          "createdAt": "2026-04-17T15:43:34.093Z",
+          "updatedAt": "2026-04-17T21:38:19.501Z"
+        },
+        {
+          "id": "55b0b5f4-8ac3-4505-ad6e-ee59592c5539",
+          "name": "Modules Registry",
+          "path": "/modules",
+          "moduleId": "cbe34cea-9716-41c5-a58e-baac2bca2a28",
+          "sortOrder": 2,
+          "createdAt": "2026-04-17T21:54:57.907Z",
+          "updatedAt": "2026-04-17T21:54:57.907Z"
+        }
+      ]
+    }
+  ],
+  "users": [
+    {
+      "id": "a38d40bb-a7f2-44da-a6fa-85f245573d8b",
+      "firstName": "Super",
+      "lastName": "Admin",
+      "email": "admin@system.com",
+      "password": "$2b$10$31crCrYn03Qk8zXl2AqzYeNSQTbg9gCHVlLwMsh1I.ME1OdS5m14.",
+      "roleId": "9dfda145-4be8-4a74-a8ce-dfe9d63f1625",
+      "status": true,
+      "refreshToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImEzOGQ0MGJiLWE3ZjItNDRkYS1hNmZhLTg1ZjI0NTU3M2Q4YiIsImlhdCI6MTc3NjQ3NTY0NywiZXhwIjoxNzc3MDgwNDQ3fQ.Tw4ZmLNgfnTPv03lEDgY805w9Nhkgkt-prK0kNUHJOQ",
+      "createdAt": "2026-04-17T15:43:34.223Z",
+      "updatedAt": "2026-04-18T01:27:27.812Z",
+      "userPermissions": []
+    },
+    {
+      "id": "433630ea-e993-4af4-b15c-6a81b9b2768e",
+      "firstName": "Test",
+      "lastName": "Admin",
+      "email": "testadmin@system.com",
+      "password": "$2b$10$kFoWjIWOMI38IBpbBmagGe55SS/.qIYGlsepPHPOyXGzkTF/3.zq.",
+      "roleId": "93dec12a-42c9-45da-b678-b00b082d98ab",
+      "status": true,
+      "refreshToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjQzMzYzMGVhLWU5OTMtNGFmNC1iMTVjLTZhODFiOWIyNzY4ZSIsImlhdCI6MTc3NjQ3MTM3MCwiZXhwIjoxNzc3MDc2MTcwfQ.zYjVJtyUtp7X51DrGtjm77tjvabCv4Qgum_P77Wkmu8",
+      "createdAt": "2026-04-17T19:26:06.476Z",
+      "updatedAt": "2026-04-18T00:16:10.063Z",
+      "userPermissions": [
+        {
+          "id": "1ef8e23b-a233-48fc-8d8f-0e8652fd25ac",
+          "userId": "433630ea-e993-4af4-b15c-6a81b9b2768e",
+          "pageId": "945087d9-92f8-4b7f-b652-7a97ffa16595",
+          "canView": true,
+          "canCreate": false,
+          "canEdit": false,
+          "canDelete": false,
+          "createdAt": "2026-04-17T20:43:18.626Z",
+          "updatedAt": "2026-04-17T20:43:18.626Z"
+        },
+        {
+          "id": "18a20fe8-8310-421c-b899-d661e59e7a2b",
+          "userId": "433630ea-e993-4af4-b15c-6a81b9b2768e",
+          "pageId": "78ae9eb2-a0af-4d61-b7d6-8381ced8a6ab",
+          "canView": true,
+          "canCreate": false,
+          "canEdit": false,
+          "canDelete": false,
+          "createdAt": "2026-04-17T20:43:18.626Z",
+          "updatedAt": "2026-04-17T20:43:18.626Z"
+        },
+        {
+          "id": "7ac40f4f-cb4c-44bc-a98e-7179810d3c82",
+          "userId": "433630ea-e993-4af4-b15c-6a81b9b2768e",
+          "pageId": "c3eebd62-e64d-4318-9eb8-8ae7b1e82cd6",
+          "canView": true,
+          "canCreate": false,
+          "canEdit": false,
+          "canDelete": false,
+          "createdAt": "2026-04-17T20:43:18.626Z",
+          "updatedAt": "2026-04-17T20:43:18.626Z"
+        },
+        {
+          "id": "37ea2eb3-7977-406f-a795-d38b73f40818",
+          "userId": "433630ea-e993-4af4-b15c-6a81b9b2768e",
+          "pageId": "10f9baa4-7e08-44d5-9b64-dd6993094e2f",
+          "canView": true,
+          "canCreate": false,
+          "canEdit": false,
+          "canDelete": false,
+          "createdAt": "2026-04-17T20:43:18.626Z",
+          "updatedAt": "2026-04-17T20:43:18.626Z"
+        }
+      ]
+    },
+    {
+      "id": "d5d0fff0-3c12-479a-aa10-18ef78b260bc",
+      "firstName": "Kuldeep",
+      "lastName": "Verma",
+      "email": "kd@gmail.com",
+      "password": "$2b$10$/GuT2HB3Cu2cnU7teHtfueAIt7ifM1q1Nf3TSGkw/X1Cgl8mUAeKi",
+      "roleId": "93dec12a-42c9-45da-b678-b00b082d98ab",
+      "status": true,
+      "refreshToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImQ1ZDBmZmYwLTNjMTItNDc5YS1hYTEwLTE4ZWY3OGIyNjBiYyIsImlhdCI6MTc3NjQ1MzMwMCwiZXhwIjoxNzc3MDU4MTAwfQ.EL9UbfgBAyUdCil6MRfrQzaQ_7tSHdnL4IXABtYJ9o0",
+      "createdAt": "2026-04-17T19:12:39.610Z",
+      "updatedAt": "2026-04-18T00:36:58.179Z",
+      "userPermissions": []
+    }
+  ]
+}
