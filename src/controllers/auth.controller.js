@@ -4,8 +4,8 @@ import { ApiResponse } from '../utils/ApiResponse.js';
 
 const cookieOptions = {
   httpOnly: true,
-  secure: process.env.NODE_ENV === 'production',
-  sameSite: 'lax'
+  secure: true, // Must be true for sameSite: 'none'
+  sameSite: 'none'
 };
 
 export const register = asyncHandler(async (req, res) => {
